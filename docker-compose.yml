@@ -1,0 +1,21 @@
+version: "3.3"
+
+services:
+  ozet-web-proxy:
+    image: nginx:latest
+    container_name: ozet-web-proxy
+    restart: "on-failure"
+    ports:
+      - 10421:10421
+    volumes:
+      - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
+  ozet-web:
+    image: ozetteam/ozet-web
+    container_name: ozet-web
+    restart: "on-failure"
+    env_file:
+      - "./.env"
+    expose:
+      - 8000
+    stdin_open: true
+    tty: true
