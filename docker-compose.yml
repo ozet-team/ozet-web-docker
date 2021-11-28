@@ -16,6 +16,6 @@ services:
     env_file:
       - "./.env"
     expose:
-      - 8000
+      - 3030
     stdin_open: true
     tty: true
