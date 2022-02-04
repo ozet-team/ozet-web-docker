@@ -7,5 +7,3 @@ docker login -u ozetteam -p ozetword!
 
 docker-compose pull
 docker-compose up -d --no-deps
-
-docker image prune -f
